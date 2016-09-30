@@ -1,52 +1,56 @@
+<style>
+select {width: 100%;}
+</style>
 <form action="/submit" id="rangedForm">
-</form>
-<table>
-  <tr>
-    <td >shooting skill</td>
-    <td>
-      <select name="shootingSkill" form="rangedForm">
-        <option value=4 {% if shootingSkill == 4 %}selected{% endif %} >untrained (4)</option>
-        <option value=6 {% if shootingSkill == 6 %}selected{% endif %} >6</option>
-        <option value=8 {% if shootingSkill == 8 %}selected{% endif %} >8</option>
-        <option value=10 {% if shootingSkill == 10 %}selected{% endif %} >10</option>
-        <option value=12 {% if shootingSkill == 12 %}selected{% endif %} >12</option>
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td>range</td>
-    <td>
-      <select name="range" form="rangedForm">
-        <option value=0 {% if shootingRange == 0 %}selected{% endif %} >short</option>
-        <option value=2 {% if shootingRange == 2 %}selected{% endif %} >medium</option>
-        <option value=4 {% if shootingRange == 4 %}selected{% endif %} >long</option>
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td>cover</td>
-    <td>
-      <select name="cover" form="rangedForm">
-        <option value=0 {% if cover == 0 %}selected{% endif %} >None</option>
-        <option value=2 {% if cover == 2 %}selected{% endif %} >minor</option>
-        <option value=4 {% if cover == 4 %}selected{% endif %} >substantial</option>
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td>specialized</td>
-    <td>
-      <input type="radio" name=specialized value=2 form="rangedForm" {% if specialized == 2 %}checked{% endif %} /> no
-      <input type="radio" name=specialized value=0 form="rangedForm" {% if specialized == 0 %}checked{% endif %} /> yes
-    </td>
-  </tr>
-  <tr>
-    <td>mods</td>
-    <td><input type="number" name=mods value={{mods}} form="rangedForm" /></td>
-  </tr>
-</table>
+    <table>
+      <tr>
+        <td >shooting skill</td>
+        <td>
+          <select name="shootingSkill" form="rangedForm">
+            <option value=4 {% if shootingSkill == 4 %}selected{% endif %} >untrained (4)</option>
+            <option value=6 {% if shootingSkill == 6 %}selected{% endif %} >6</option>
+            <option value=8 {% if shootingSkill == 8 %}selected{% endif %} >8</option>
+            <option value=10 {% if shootingSkill == 10 %}selected{% endif %} >10</option>
+            <option value=12 {% if shootingSkill == 12 %}selected{% endif %} >12</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>range</td>
+        <td>
+          <select name="range" form="rangedForm">
+            <option value=0 {% if shootingRange == 0 %}selected{% endif %} >short</option>
+            <option value=2 {% if shootingRange == 2 %}selected{% endif %} >medium</option>
+            <option value=4 {% if shootingRange == 4 %}selected{% endif %} >long</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>cover</td>
+        <td>
+          <select name="cover" form="rangedForm">
+            <option value=0 {% if cover == 0 %}selected{% endif %} >None</option>
+            <option value=2 {% if cover == 2 %}selected{% endif %} >minor</option>
+            <option value=4 {% if cover == 4 %}selected{% endif %} >substantial</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>specialized</td>
+        <td>
+          <input type="radio" name=specialized value=2 form="rangedForm" {% if specialized == 2 %}checked{% endif %} /> no
+          <input type="radio" name=specialized value=0 form="rangedForm" {% if specialized == 0 %}checked{% endif %} /> yes
+        </td>
+      </tr>
+      <tr>
+        <td>mods</td>
+        <td><input type="number" name=mods value={{mods}} form="rangedForm" /></td>
+      </tr>
+    </table>
 
-<input type=submit form=rangedForm></input>
+    <input type=submit form=rangedForm></input>
+</form>
+
 {% if rolled %}
     You rolled a {{rollResult}} </br>
     After factoring for modifiers, you rolled a {{result}}
