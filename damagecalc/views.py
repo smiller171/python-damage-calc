@@ -10,7 +10,7 @@ def aceableRoll(skillLevel):
     result = 0
     roll = skillLevel
     while roll == skillLevel:
-        roll = r.randrange(1, skillLevel, 1)
+        roll = r.randrange(1, skillLevel + 1, 1)
         result = result + roll
     return result
 
@@ -18,7 +18,7 @@ def aceableRoll(skillLevel):
 def role(skillLevel):
     r = RandomDotOrg('DamageCalc')
     result = 0
-    roll = r.randrange(1, skillLevel, 1)
+    roll = r.randrange(1, skillLevel + 1, 1)
     result = result + roll
     return result
 
