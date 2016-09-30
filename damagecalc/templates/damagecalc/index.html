@@ -1,6 +1,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="static/scripts/main.js"></script>
-
+<style>
+select {width: 100%;}
+</style>
 <form action="/calc_hit/" method="POST" id="rangedForm">
     {% csrf_token %}
     <table>
@@ -53,7 +55,7 @@
 
 
 <div style="display:none" id=result-div>
-    
+
     You rolled a <span id=rollResult></span> </br>
     After factoring for modifiers, you rolled a <span id=result></span>
     <h1 id=statement></h1>
